@@ -1,0 +1,80 @@
+
+.wrapper{
+    background-color: whitesmoke;
+    display: grid;
+    grid-template-columns: repeat(25,30px);
+    grid-template-rows: repeat(30,30px);
+    height: fit-content;
+    width: 100%;
+}
+.searchbar{
+    grid-column-start: 10;
+    grid-column-end: 10;
+    grid-row-start: 1;
+    width: 500px;
+    height: fit-content;
+}
+.avtar{
+    height: fit-content;
+    width: fit-content;
+    grid-column-start: 27;
+    grid-column-end: 30;
+    grid-row-start: 1;
+}
+.stats{
+    width: fit-content;
+    height: fit-content;
+    grid-column-start: 1;
+    grid-column-end: 20;
+    grid-row-start: 3;
+}
+.chart{
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 10px;
+    width: fit-content;
+    grid-column-start:1;
+    grid-column-end: 5;
+    grid-row-start:8;
+    grid-row-end: 15;
+}
+.social{
+    grid-row-start: 7;
+    grid-column-start: 16;
+    grid-column-end: 25;
+}
+.comment{
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 25;
+    grid-column-end: 25;
+}
+.article{
+    grid-row-start: 16;
+    grid-column-start: 1;
+    grid-column-end: 24;
+}
+.pie{
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    grid-row-start: 16;
+    grid-column-start: 25;
+    grid-column-end: 25;
+}
+.state1{
+    color: blue;
+    font-size: 20px;
+}
+.state2{
+    color: blue;
+    font-size: 20px;
+}
+.state3{
+    color: red;
+    font-size: 20px;
+}
+.state4{
+    color: blue;
+    font-size: 20px;
+}
