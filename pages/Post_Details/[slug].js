@@ -14,6 +14,7 @@ import UserContext from '../../context/UserContext'
 
 const PostDetails = ({post, comments}) => {
   const content = parser(post.content)
+  const {data:session,status} = useSession();
   const a = useContext(UserContext)
   const [user,setUser] = useState({name:'',email:'',comment:'',photoUrl:'',postId:''})
   const [isUser,setIsUser] = useState(false)
@@ -31,7 +32,6 @@ const PostDetails = ({post, comments}) => {
       setIsUser(true)
       setUser({...user,name:name,email:email,comment:comment,photoUrl:image,postId:post._id})
      }else{
-     const {data:session,status} = useSession();
      setUser({name:session.name,email:session.email,comment:comment,photoUrl:session.image,postId:post._id})
      }
      let res = await fetch('http://localhost:3000/api/addComments/',{
