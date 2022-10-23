@@ -4,7 +4,7 @@ import connectDb from '../../middleware/mongoose'
 const handler =async (req,res)=> {
     if(req.method == 'POST'){
      let a = new Post({
-      userId: req.body.userId,
+      userEmail: req.body.userEmail,
       title: req.body.title,
       excerpt: req.body.excerpt,
       content: req.body.content,

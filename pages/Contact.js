@@ -1,24 +1,25 @@
 import React from 'react'
+import Image from 'next/image'
+import {Formik,Form,Field} from 'formik'
+
 
 const About = () => {
- return (
- <div className='grid grid-cols-4 mt-20'>
-  <div className='flex flex-col bg-white h-auto w-96 shadow-xl rounded-lg ml-24'>
-   <h3 className='text-center text-c3 font-bold text-2xl mt-5'>Message Me</h3>
-   <div className='flex flex-col'>
-    <input className='self-center text-xl border-2 border-c4 rounded-md px-2 py-2 mt-5 w-80' type='text' placeholder="Email"/>
-    <textarea className='self-center text-xl border-2 border-c4 rounded-md px-2 py-2 mt-5 w-80 h-48' type='text' placeholder="Write Message Here..."></textarea>
-    <div className='bg-c2 hover:bg-c3 w-fit self-center px-4 py-2 rounded-lg text-white font-bold mb-5 mt-10 cursor-pointer'>
-      <h3>Submit Message</h3>
-    </div>
-    </div>
+  const initialValues = {title:'',content: '',excerpt:''}
+   
+  return (
+  <div className='grid lg:grid-cols-8 grid-cols-1 h-full w-fit rounded-lg ml-10 mr-10 col-start-1 col-end-2 mt-28'>
+   <div className='col-start-1 col-end-4'><Image src={'/contact.png'} height={400} width={400}/></div>
+   <div className='col-start-5 col-end-8'>
+   <Formik>
+    <Form className='flex flex-col space-y-5 h-96 w-full shadow-lg p-10 rounded-xl'>
+     <h3 className='text-c2 font-bold text-3xl text-center'>Message Me</h3>
+     <Field className="rounded-xl border-2 border-c2 px-2 text-lg w-1/2" placeholder="Enter Email"/>
+     <textarea className="rounded-xl border-2 border-c2 px-2 text-lg h-32 w-96" placeholder="Enter Email"/>
+     <button className='bg-c4 rounded-lg w-fit h-fit px-5 py-2 font-bold'>SEND</button>
+    </Form>
+   </Formik>
+   </div> 
   </div>
-  <div className='col-start-3 bg-white shadow-2xl w-96 h-auto p-5 ml-20'>
-    <h3 className='text-center font-bold text-2xl mt-5 mb-5 '>About Me</h3>
-    <p className='text-c4 font-semibold'>I am a full stack web developer. I can build responsive and beautifull websites for both personal and business purposes. This website is also part of my work. Please feel free to give your opinion about my website and also visit my portfolio to see more amazing works.</p>
-    <div className='bg-gradient-to-l bg-c4 hover:from-c4 hover:to-c3 w-fit px-4 py-2 rounded-lg text-white font-bold mt-10 mx-32 cursor-pointer'>Portfolio</div>
-  </div>
- </div>
   )
 }
 

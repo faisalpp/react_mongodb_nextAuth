@@ -3,7 +3,7 @@ import {FaFacebook, FaGitSquare, FaInstagram, FaTwitter} from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <div  className="bg-c4 sticky top-full p-2">
+    <div  className="bg-c1 border-2 border-c2 sticky top-full p-2">
     <div className="grid grid-cols-8 bg-c5">
      <div className='flex flex-col items-center w-36'>
        <h3 className='text-c2 text-2xl'>REACTIAN</h3>

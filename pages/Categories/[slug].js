@@ -3,13 +3,10 @@ import Card from '../../components/Card'
 import mongoose from 'mongoose'
 import Post from '../../models/Post'
 
-const Categories = ({posts,slug}) => {
+const Categories = ({posts}) => {
   return (
-    <div className='bg-c1'>
-     <div className='flex justify-center'>
-      <h3 className='text-c3 font-bold text-2xl mt-5'>{slug}</h3>
-     </div>
-     <Card posts={posts}/>
+    <div className='grid grid-cols-3 mt-10 mb-10'>
+     {posts.map((post) => <Card title={post.title} excerpt={post.excerpt} category={post.category} image={post.image} slug={post.slug}/>)}
     </div>
   )
 }

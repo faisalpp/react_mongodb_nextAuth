@@ -2,20 +2,18 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const Card = ({posts}) => {
+const Card = ({slug,image,category,title,excerpt,key}) => {
   return (
-   <div>
-     <div className='flex space-x-20 ml-24'>
-     {posts && posts.map((post) => <Link href={`/Post_Details/${post.slug}`} key={post.slug}>
-      <div className='h-fit cursor-pointer container bg-c1 shadow-xl rounded-xl mt-10 mb-10 w-72'>
-       <Image src={post.image} height={200} width={310} className='rounded-t-lg'/>
+    <div className='flex flex-row space-x-20 justify-center mb-10'>
+     <Link href={`/Post_Details/${slug}`} >
+      <div className='h-fit cursor-pointer container bg-c1 shadow-xl rounded-xl w-72'>
+       <Image src={image} height={200} width={310} className='rounded-t-lg'/>
        <div className='ml-5 mr-5'>
-        <h3 className='text-black text-sm font-semibold bg-c4 w-fit px-2 py-px rounded-lg'>{post.category}</h3>
-        <h3 className='text-c3 font-bold text-xl mb-2 mt-2'>{post.title}</h3>
-        <p className='h-16 text-c2 font-semibold'>{post.excerpt}</p>
+        <h3 className='text-c2 text-xs font-bold border-2 border-c2 w-fit px-2 py-px rounded-xl'>{category}</h3>
+        <h3 className='text-c2 font-bold text-xl mb-2 mt-2'>{title}</h3>
+        <p className='h-16 text-c3 font-semibold'>{excerpt}</p>
        </div>
-   </div></Link>)}
-      </div>
+   </div></Link>
    </div>
   )
 }
