@@ -19,52 +19,35 @@ const PostDetails = ({post, comments}) => {
   const [user,setUser] = useState({name:'',email:'',comment:'',photoUrl:'',postId:''})
   const [isUser,setIsUser] = useState(false)
   const initialValues = {comment:''}
-
+  
   const validationSchema = Yup.object ({
     comment: Yup.string().required('Required'),
    })
 
    const handleSubmit = async (values) => {
-     const {comment} = values
-     const getToken = localStorage.getItem('token')
-     if(getToken){
-      const {name,email,image} = jwt.verify(getToken,'jwtsecret')
-      setIsUser(true)
-      setUser({...user,name:name,email:email,comment:comment,photoUrl:image,postId:post._id})
-     }else{
-     setUser({name:session.name,email:session.email,comment:comment,photoUrl:session.image,postId:post._id})
-     }
-     let res = await fetch('http://localhost:3000/api/addComments/',{
-    method: 'POST', 
-    headers:{
-      'Content-Type':'application/json',
-      'Accept':'application/json'
-    },
-    body: JSON.stringify(user)
-    })
-   const response = await res.json()
-   if(response.success){
-    toast.success('Comment Posted!',{
-      position: 'top-left',
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    })
-   }else {
-    toast.error('Something Went Wrong!',{
-      position: 'top-left',
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    })
-   }
-    }  
+  //  const response = await res.json()
+  //  if(response.success){
+  //   toast.success('Comment Posted!',{
+  //     position: 'top-left',
+  //     autoClose: 2000,
+  //     hideProgressBar: false,
+  //     closeOnClick: true,
+  //     pauseOnHover: true,
+  //     draggable: true,
+  //     progress: undefined,
+  //   })
+  //  }else {
+  //   toast.error('Something Went Wrong!',{
+  //     position: 'top-left',
+  //     autoClose: 2000,
+  //     hideProgressBar: false,
+  //     closeOnClick: true,
+  //     pauseOnHover: true,
+  //     draggable: true,
+  //     progress: undefined,
+  //   })
+  //  }
+  }  
    
   return (
    <>
