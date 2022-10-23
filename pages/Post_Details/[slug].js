@@ -80,7 +80,7 @@ const PostDetails = ({post, comments}) => {
      </div>
     </div>
     <div className="rounded-xl ml-20 mb-10 p-5 w-fit rounded-t-lg">
-     <h3 className='text-xl mb-5 ml-2 font-bold'>{comments.length} Comment's</h3>
+     <h3 className='text-xl mb-5 ml-2 font-bold'>{comments.length} Comment&apos;s</h3>
      
      {a.state.isToken && <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={validationSchema}>
       <Form className='border-2 border-c2 rounded-lg px-2 py-2 mb-2 w-full'>
@@ -90,7 +90,7 @@ const PostDetails = ({post, comments}) => {
      </Formik>}
 
         {comments.map((comment)=> <div key={comment._id} className='mb-8 border-b-2 border-gray-200'>
-        <div className='flex items-center'><Image className='rounded-full' src={`${comment.photoUrl}`} height={30} width={30} />
+        <div className='flex items-center'><Image alt='user_img' className='rounded-full' src={`${comment.photoUrl}`} height={30} width={30} />
         <h3 className='ml-3 text-c1'>{comment.name}</h3>
         <h3 className='ml-3 text-c1'>{comment.createdAt}</h3>
         </div>
