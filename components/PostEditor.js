@@ -3,7 +3,7 @@ import {toast,ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import 'react-quill/dist/quill.snow.css'
 import dynamic from 'next/dynamic';
-const ReactQuill = dynamic(require('react-quill'), { ssr: false })
+const ReactQuill = dynamic(import('react-quill'), { ssr: false })
 import * as Yup from 'yup'
 import {Formik, Form, Field} from 'formik'
 
