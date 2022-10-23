@@ -13,7 +13,7 @@ const About = () => {
    })
 
   const handleSubmit = (values) => {
-    const data = fetch('http://localhost:3000/api/sendMsg',{
+    const data = fetch(`${process.env.WEB_URL}`+'/api/sendMsg',{
       method:'POST',
       headers:{
         'Content-Type':'application/json',
