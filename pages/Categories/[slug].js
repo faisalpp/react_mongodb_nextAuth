@@ -6,7 +6,7 @@ import Post from '../../models/Post'
 const Categories = ({posts}) => {
   return (
     <div className='grid grid-cols-3 mt-10 mb-10'>
-     {posts.map((post) => <Card title={post.title} excerpt={post.excerpt} category={post.category} image={post.image} slug={post.slug}/>)}
+     {posts.map((post,index) => <Card key={index} title={post.title} excerpt={post.excerpt} category={post.category} image={post.image} slug={post.slug}/>)}
     </div>
   )
 }

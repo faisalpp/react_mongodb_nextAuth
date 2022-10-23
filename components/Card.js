@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const Card = ({slug,image,category,title,excerpt,key}) => {
   return (
-    <div className='flex flex-row space-x-20 justify-center mb-10'>
+    <div key={key} className='flex flex-row space-x-20 justify-center mb-10'>
      <Link href={`/Post_Details/${slug}`} >
       <div className='h-fit cursor-pointer container bg-c1 shadow-xl rounded-xl w-72'>
        <Image src={image} height={200} width={310} className='rounded-t-lg'/>
