@@ -26,7 +26,7 @@ const Header = () => {
          {status === 'unauthenticated' ? <Link href={'/api/auth/signin'}><a onClick={e => {e.preventDefault; signIn()}} className='bg-c3 hover:bg-c2 text-white rounded-lg px-4 py-2 font-semibold cursor-pointer' >Login</a></Link>:null}
       </div>
       
-      <div>{status == 'authenticated' ? <button onClick={()=> setShow(true)} className='flex items-center hover:bg-c1 h-12 w-12 rounded-full cursor-pointer mr-2'><Image src={`${session.user.image}`} className="rounded-full" height={40} width={40}/></button>:null}</div>
+      <div>{status == 'authenticated' ? <button onClick={()=> setShow(true)} className='flex items-center hover:bg-c1 h-12 w-12 rounded-full cursor-pointer mr-2'><Image alt='user_img' src={`${session.user.image}`} className="rounded-full" height={40} width={40}/></button>:null}</div>
       {show && <div onMouseLeave={()=> setShow(false)} className="flex flex-col px-4 py-2 text-center text-sm h-auto w-auto bg-white rounded-lg border-2 border-c4 z-10 absolute mt-16">
         <Link href={'/'}><h3 className="text-c4 hover:text-c2 cursor-pointer">Account</h3></Link>
         <button onClick={()=> {signOut('github');router.redirect('/')}}><h3 className=" text-c4 hover:text-c2 cursor-pointer">Signout</h3></button>
