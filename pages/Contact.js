@@ -48,7 +48,7 @@ const About = () => {
   <>
   <ToastContainer position='top-left' autoClose={2000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover/>
   <div className='grid lg:grid-cols-8 grid-cols-1 h-full w-fit rounded-lg ml-10 mr-10 col-start-1 col-end-2 mt-28'>
-   <div className='col-start-1 col-end-4'><Image src={'/contact.png'} height={400} width={400}/></div>
+   <div className='col-start-1 col-end-4'><Image alt='contact' src={'/contact.png'} height={400} width={400}/></div>
    <div className='col-start-5 col-end-8'>
    <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={validationSchema}>
     <Form className='flex flex-col space-y-5 h-96 w-full shadow-lg p-10 rounded-xl'>

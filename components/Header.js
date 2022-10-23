@@ -18,7 +18,7 @@ const Header = () => {
        <div className='flex space-x-10 items-center'>
         <Link href={'/'}><h3 className='text-c4 hover:border-b-2 hover:border-c3 hover:text-c3 hover:py-0.5 cursor-pointer'>Home</h3></Link>
         <Link href={'/Categories/ReactJs'} ><h3 className='text-c4 active:text-c2 hover:border-b-2 hover:border-c3 hover:text-c3 hover:py-0.5 cursor-pointer'>ReactJs</h3></Link>
-        <Link href={"/Categories/UiDesigns"} ><h3 className='text-c4 hover:border-b-2 hover:border-c3 hover:text-c3 hover:py-0.5 cursor-pointer'>UI Design's</h3></Link>
+        <Link href={"/Categories/UiDesigns"} ><h3 className='text-c4 hover:border-b-2 hover:border-c3 hover:text-c3 hover:py-0.5 cursor-pointer'>UI Design&apos;s</h3></Link>
         <Link href={'/Contact'}><h3 className='text-c4 hover:border-b-2 hover:border-c3 hover:text-c3 hover:py-0.5 cursor-pointer'>Contact</h3></Link>
        </div>
       

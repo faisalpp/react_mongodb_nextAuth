@@ -71,7 +71,7 @@ const PostDetails = ({post, comments}) => {
    <ToastContainer position='top-left' autoClose={2000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover/>
     <div>
     <div className='flex flex-col rounded-xl ml-20 mr-20 mt-10 mb-10'>
-        <div className='flex justify-center'><Image src={post.image} height={500} width={800}/></div>
+        <div className='flex justify-center'><Image alt='post_image' src={post.image} height={500} width={800}/></div>
      <div className='rounded-b-xl'>
         <h3 className='flex flex-col text-center mt-5 font-bold text-4xl'>{post.title}</h3>
         <div className='ml-10 mt-10'>

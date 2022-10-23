@@ -12,7 +12,7 @@ const unauthenticated = () => {
       </div>
       <div className='flex flex-col text-center space-y-5 h-fit'>
        <h3 className='font-bold text-5xl'>Page Not Found</h3>
-       <h3 className='text-slate-400 text-lg font-semibold'>Sorry, We could't find the Page</h3>
+       <h3 className='text-slate-400 text-lg font-semibold'>Sorry, We could&apos;t find the Page</h3>
       <div className='flex items-center bg-c4 self-center w-fit h-fit px-3 py-3 text-c1 text-lg font-bold rounded-lg space-x-3 cursor-pointer hover:bg-c3'><FaHome className='text-2xl'/><h3>Navigate To Home</h3></div>
       </div>
     </div>
