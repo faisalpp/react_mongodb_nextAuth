@@ -1,54 +1,14 @@
-import React, { useState ,useEffect, useContext} from 'react'
-import {toast,ToastContainer} from 'react-toastify'
+import React from 'react'
+import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Image from 'next/image'
 import mongoose from 'mongoose'
 import Post from '../../models/Post'
 import Comment  from '../../models/Comment'
 import parser from 'html-react-parser'
-import {Formik,Form,Field} from 'formik'
-const jwt = require('jsonwebtoken')
-import { useSession } from 'next-auth/react'
-import * as Yup from 'yup'
-import UserContext from '../../context/UserContext'
 
 const PostDetails = ({post, comments}) => {
   const content = parser(post.content)
-  const {data:session,status} = useSession();
-  const a = useContext(UserContext)
-  const [user,setUser] = useState({name:'',email:'',comment:'',photoUrl:'',postId:''})
-  const [isUser,setIsUser] = useState(false)
-  const initialValues = {comment:''}
-  
-  const validationSchema = Yup.object ({
-    comment: Yup.string().required('Required'),
-   })
-
-   const handleSubmit = async (values) => {
-  //  const response = await res.json()
-  //  if(response.success){
-  //   toast.success('Comment Posted!',{
-  //     position: 'top-left',
-  //     autoClose: 2000,
-  //     hideProgressBar: false,
-  //     closeOnClick: true,
-  //     pauseOnHover: true,
-  //     draggable: true,
-  //     progress: undefined,
-  //   })
-  //  }else {
-  //   toast.error('Something Went Wrong!',{
-  //     position: 'top-left',
-  //     autoClose: 2000,
-  //     hideProgressBar: false,
-  //     closeOnClick: true,
-  //     pauseOnHover: true,
-  //     draggable: true,
-  //     progress: undefined,
-  //   })
-  //  }
-  }  
-   
   return (
    <>
    <ToastContainer position='top-left' autoClose={2000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover/>
@@ -65,12 +25,12 @@ const PostDetails = ({post, comments}) => {
     <div className="rounded-xl ml-20 mb-10 p-5 w-fit rounded-t-lg">
      <h3 className='text-xl mb-5 ml-2 font-bold'>{comments.length} Comment&apos;s</h3>
      
-     {a.state.isToken && <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={validationSchema}>
+     {/* {a.state.isToken && <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={validationSchema}>
       <Form className='border-2 border-c2 rounded-lg px-2 py-2 mb-2 w-full'>
        <Field name="comment" className='w-full border-2 border-b-c2 border-l-transparent border-r-transparent border-t-transparent mb-2' placeholder="Say Something..."/>
        <div className='flex justify-end'><button type="submit" className='bg-c4 hover:bg-c3 w-16 h-8 rounded-lg text-white'>Send</button></div>
       </Form>
-     </Formik>}
+     </Formik>} */}
 
         {comments.map((comment)=> <div key={comment._id} className='mb-8 border-b-2 border-gray-200'>
         <div className='flex items-center'><Image alt='user_img' className='rounded-full' src={`${comment.photoUrl}`} height={30} width={30} />
