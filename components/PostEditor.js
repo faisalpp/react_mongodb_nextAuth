@@ -1,20 +1,17 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import {toast,ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import 'react-quill/dist/quill.snow.css'
 import dynamic from 'next/dynamic';
-const ReactQuill = dynamic(import('react-quill'), { ssr: false })
+const ReactQuill = dynamic(require('react-quill'), { ssr: false })
 import * as Yup from 'yup'
 import {Formik, Form, Field} from 'formik'
-import FileBase64 from 'react-file-base64';
-const jwt = require('jsonwebtoken')
 
 const PostEditor = () => {
   const initialValues = {title:'',content: '',excerpt:''}
   
   const [category,setCategory] = useState('')
   const [isFeatured,setIsFeatured] = useState('')
-  const [image,setImage] = useState('')
   
   const validationSchema = Yup.object ({
    title: Yup.string().required('Required'),
@@ -26,7 +23,7 @@ const PostEditor = () => {
     const {title,content,excerpt} = values
     let getSlug = '';
     getSlug = title.toLowerCase().replaceAll(' ','_')
-    const data = {title:title,excerpt:excerpt,content:content,image:image,category:category,isFeatured:isFeatured}
+    const data = {title:title,excerpt:excerpt,content:content,category:category,isFeatured:isFeatured}
     let res = await fetch('http://localhost:3000/api/addPosts/',{
     method: 'POST', 
     headers:{
@@ -69,7 +66,6 @@ const PostEditor = () => {
       <Field className='border-2 border-blue-400 rounded-lg w-96 px-2' placeholder='Enter Post Excerpt' name="excerpt"/>
       </div>
       <div className='flex space-x-5'>
-       <FileBase64 multiple={false} onChange={(e)=>setImage(e.target.value)} onDone={({base64})=> setImage(base64)}/>
        <select onChange={(e)=>setCategory(e.target.value)}>
         <option>Category</option>
         <option>ReactJs</option>
