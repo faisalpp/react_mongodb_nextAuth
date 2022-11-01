@@ -4,7 +4,6 @@ import * as Yup from 'yup'
 import {toast,ToastContainer} from 'react-toastify'
 import { IoIosArrowForward } from 'react-icons/io'
 import 'react-toastify/dist/ReactToastify.css'
-import WEB_URL from '../fa'
 
 const Contact = () => {
     const initialValues = {name:'',email:'',message: ''}

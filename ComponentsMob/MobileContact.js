@@ -4,7 +4,6 @@ import * as Yup from 'yup'
 import {toast,ToastContainer} from 'react-toastify'
 import { IoIosArrowForward,IoMdSend } from 'react-icons/io'
 import 'react-toastify/dist/ReactToastify.css'
-import WEB_URL from '../fa'
 
 const MobileContact = () => {
   const initialValues = {name:'',email:'',message: ''}

@@ -10,7 +10,6 @@ import {useSession} from 'next-auth/react'
 import {AiFillLike} from 'react-icons/ai'
 import {IoIosArrowForward,IoMdSend} from 'react-icons/io'
 import { isMobile } from 'react-device-detect'
-import WEB_URL from '../fa'
 
 const Post = ({post, comments}) => {
   const {data:session,status} = useSession()
