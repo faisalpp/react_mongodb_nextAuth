@@ -16,7 +16,7 @@ const Layout = ({children}) => {
   return (
     <> 
       {_isMobile ? <MobileHeader/>:<Header/>}
-      <div style={{"min-height":"100vh"}}>{children}</div>
+      <div style={{"minHeight":"100vh"}}>{children}</div>
       {_isMobile ? <MobileFooter/>:<Footer/>}
     </>
   )

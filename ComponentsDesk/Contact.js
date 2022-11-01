@@ -3,24 +3,27 @@ import {Formik,Form,Field} from 'formik'
 import * as Yup from 'yup'
 import {toast,ToastContainer} from 'react-toastify'
 import { IoIosArrowForward } from 'react-icons/io'
+import 'react-toastify/dist/ReactToastify.css'
+
 
 const Contact = () => {
-    const initialValues = {email:'',message: ''}
+    const initialValues = {name:'',email:'',message: ''}
   
     const validationSchema = Yup.object ({
+      name: Yup.string().required('Required'),
       email: Yup.string().required('Required'),
       message: Yup.string().required('Required'),
      })
   
-    const handleSubmit = (values) => {
-      const data = fetch(`${process.env.WEB_URL}`+'/api/sendMsg',{
+    const handleSubmit = async (values) => {
+      const data = await fetch('http://localhost:3000/api/sendMsg',{
         method:'POST',
         headers:{
           'Content-Type':'application/json',
         },
         body: JSON.stringify(values)
       })
-      const response = data.json()
+      const response = await data.json()
       if(response.success){
         toast.success('Message Recieved!',{
           position: 'top-left',
@@ -53,11 +56,12 @@ const Contact = () => {
       <h3 className='text-c2 font-bold text-3xl text-center'>Message Me</h3>
       <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={validationSchema}>
       <Form className='flex flex-col'>
-        <Field name="email" className='w-60 h-10 px-2 rounded-lg mb-10 border-2  border-gray-300' placeholder="Enter Your Email"/>
-        <Field name="content">
+        <Field name="name" className='w-60 h-10 px-2 rounded-lg mb-10 border-2  border-gray-300' placeholder="Name"/>
+        <Field name="email" className='w-60 h-10 px-2 rounded-lg mb-10 border-2  border-gray-300' placeholder="Email"/>
+        <Field name="message">
           {({field}) => <textarea value={field.value} onChange={field.onChange(field.name) } className='w-60 px-2 rounded-lg border-2 bordewr-gray-300 h-32' placeholder="Enter Your Message"/>}
         </Field>
-        <button className='bg-c2 text-c1 font-semibold mt-10 rounded-xl p-2 text-xl'>Send Message</button>
+        <button type="submit" className='bg-c2 text-c1 font-semibold mt-10 rounded-xl p-2 text-xl'>Send Message</button>
       </Form>
      </Formik>
      </div>

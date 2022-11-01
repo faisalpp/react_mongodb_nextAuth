@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react'
-import DeskPost from '../../components/DeskPost'
+import DeskPost from '../../ComponentsDesk/Post'
 import MobilePost from '../../ComponentsMob/MobilePost'
 import { isMobile } from 'react-device-detect'
 import Post from '../../models/Post'
