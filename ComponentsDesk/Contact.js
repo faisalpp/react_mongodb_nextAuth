@@ -15,7 +15,7 @@ const Contact = () => {
      })
      
     const handleSubmit = async (values) => {
-      const data = await fetch(`${process.env.WEB_URL}/api/sendMsg`,{
+      const data = await fetch(`${process.env.NEXT_PUBLIC_WEB_URL}/api/sendMsg`,{
         method:'POST',
         headers:{
           'Content-Type':'application/json',
