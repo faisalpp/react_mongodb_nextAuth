@@ -24,7 +24,7 @@ const PostEditor = () => {
     let getSlug = '';
     getSlug = title.toLowerCase().replaceAll(' ','_')
     const data = {title:title,excerpt:excerpt,content:content,category:category,isFeatured:isFeatured}
-    let res = await fetch('http://localhost:3000/api/addPosts/',{
+    let res = await fetch(`${process.env.WEB_URL}`+'api/addPosts/',{
     method: 'POST', 
     headers:{
       'Content-Type':'application/json',
