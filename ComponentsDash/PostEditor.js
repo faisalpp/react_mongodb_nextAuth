@@ -6,7 +6,6 @@ import dynamic from 'next/dynamic';
 const ReactQuill = dynamic(import('react-quill'), { ssr: false })
 import * as Yup from 'yup'
 import {Formik, Form, Field} from 'formik'
-import WEB_URL from '../fa'
 
 const PostEditor = () => {
   const initialValues = {title:'',content: '',excerpt:''}
