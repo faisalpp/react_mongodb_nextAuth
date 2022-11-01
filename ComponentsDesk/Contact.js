@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 const Contact = () => {
     const initialValues = {name:'',email:'',message: ''}
-  
+
     const validationSchema = Yup.object ({
       name: Yup.string().required('Required'),
       email: Yup.string().required('Required'),
@@ -16,7 +16,7 @@ const Contact = () => {
      })
   
     const handleSubmit = async (values) => {
-      const data = await fetch('http://localhost:3000/api/sendMsg',{
+      const data = await fetch(`${process.env.WEB_URL}'api/sendMsg'`,{
         method:'POST',
         headers:{
           'Content-Type':'application/json',
