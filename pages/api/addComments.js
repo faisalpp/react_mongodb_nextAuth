@@ -7,7 +7,7 @@ const handler =async (req,res)=> {
         name: req.body.name,
         email: req.body.email,
         comment: req.body.comment,
-        photoUrl: req.body.photoUrl,
+        image: req.body.image,
         postId: req.body.postId
      })
      await u.save()

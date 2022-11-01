@@ -4,14 +4,12 @@ import connectDb from '../../middleware/mongoose'
 const handler =async (req,res)=> {
     if(req.method == 'POST'){
      let a = new Post({
-      userEmail: req.body.userEmail,
+      slug: req.body.slug,
       title: req.body.title,
       excerpt: req.body.excerpt,
       content: req.body.content,
       image: req.body.image,
       category: req.body.category,
-      isFeatured: req.body.isFeatured,
-      slug: req.body.slug,
      })
      await a.save()
     res.status(200).json({success: "success"}) 

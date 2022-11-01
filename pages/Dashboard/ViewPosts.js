@@ -1,6 +1,6 @@
 import React from 'react'
-import DashboardLayout from '../../components/DashboardLayout'
-import AllArticles from '../../dashboard_components/AllArticles'
+import DashboardLayout from '../../ComponentsDash/DashboardLayout'
+import AllArticles from '../../ComponentsDash/AllArticles'
 import Post from '../../models/Post'
 import {getSession} from 'next-auth/react'
 

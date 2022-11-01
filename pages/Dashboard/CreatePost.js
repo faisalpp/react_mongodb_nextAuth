@@ -1,6 +1,6 @@
 import React from 'react'
-import DashboardLayout from '../../components/DashboardLayout'
-import PostEditor from '../../components/PostEditor'
+import DashboardLayout from '../../ComponentsDash/DashboardLayout'
+import PostEditor from '../../ComponentsDash/PostEditor'
 import {getSession} from 'next-auth/react'
 
 const CreatePost = ({session}) => {
