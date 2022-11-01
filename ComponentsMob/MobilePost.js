@@ -33,7 +33,7 @@ const MobilePost = ({post, comments}) => {
   
    const handleSubmit = async (values) => {
     const value = commentBinder(session.user.name,session.user.email,session.user.image,values.comment,post._id);
-    const data = await fetch(`${WEB_URL}api/addComments`,{
+    const data = await fetch(`${process.env.WEB_URL}api/addComments`,{
       method:'POST',
       headers:{
         'Content-Type':'application/json',

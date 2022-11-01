@@ -15,7 +15,7 @@ const MobileContact = () => {
    })
 
   const handleSubmit = (values) => {
-    const data = fetch(`${WEB_URL}api/sendMsg`,{
+    const data = fetch(`${process.env.WEB_URL}api/sendMsg`,{
       method:'POST',
       headers:{
         'Content-Type':'application/json',
