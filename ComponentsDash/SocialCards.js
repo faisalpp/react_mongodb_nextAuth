@@ -1,6 +1,6 @@
 import React from 'react'
 import {FaFacebook,FaTwitter,FaWhatsapp} from 'react-icons/fa'
-import SocialCard from '../dashboard_components/SocialCard'
+import SocialCard from '../ComponentsDash/SocialCard'
 
 const SocialCards = () => {
   return (

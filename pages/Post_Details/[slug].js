@@ -12,7 +12,7 @@ const PostDetails = ({post,comments}) => {
 
   useEffect(() => {
     setIsMobile(isMobile);
-  }, [setIsMobile,isMobile])
+  }, [setIsMobile])
   
   
   return (

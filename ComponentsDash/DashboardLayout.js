@@ -1,5 +1,5 @@
 import React from 'react'
-import DashboardMenu from '../components/DashboardMenu'
+import DashboardMenu from './DashboardMenu'
 
 const DashboardLayout = ({children}) => {
   return (

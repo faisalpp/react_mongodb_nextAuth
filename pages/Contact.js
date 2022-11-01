@@ -9,7 +9,7 @@ const Contact = () => {
 
   useEffect(() => {
     setIsMobile(isMobile)
-  }, [isMobile,setIsMobile])
+  }, [setIsMobile])
   
   
   return (

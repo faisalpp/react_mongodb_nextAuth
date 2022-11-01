@@ -11,7 +11,7 @@ export default function Home({react,ui}) {
   
   useEffect(() => {
     setMobile(isMobile)
-  }, [setMobile,isMobile])
+  }, [setMobile])
   
   return (
      <div className='w-full'>
