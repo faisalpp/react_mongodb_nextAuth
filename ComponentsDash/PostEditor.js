@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 const ReactQuill = dynamic(import('react-quill'), { ssr: false })
 import * as Yup from 'yup'
 import {Formik, Form, Field} from 'formik'
+import WEB_URL from '../fa'
 
 const PostEditor = () => {
   const initialValues = {title:'',content: '',excerpt:''}
@@ -24,7 +25,7 @@ const PostEditor = () => {
     let getSlug = '';
     getSlug = title.toLowerCase().replaceAll(' ','_')
     const data = {title:title,excerpt:excerpt,content:content,category:category,isFeatured:isFeatured}
-    let res = await fetch(`${process.env.WEB_URL}`+'api/addPosts/',{
+    let res = await fetch(`${WEB_URL}api/addPosts/`,{
     method: 'POST', 
     headers:{
       'Content-Type':'application/json',

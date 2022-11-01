@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from '../styles/Dashboard.module.css'
 import {GiShadowFollower} from 'react-icons/gi'
 import {MdArticle} from 'react-icons/md'
 import {AiFillHeart} from 'react-icons/ai'

@@ -4,7 +4,7 @@ import * as Yup from 'yup'
 import {toast,ToastContainer} from 'react-toastify'
 import { IoIosArrowForward } from 'react-icons/io'
 import 'react-toastify/dist/ReactToastify.css'
-
+import WEB_URL from '../fa'
 
 const Contact = () => {
     const initialValues = {name:'',email:'',message: ''}
@@ -16,7 +16,8 @@ const Contact = () => {
      })
      
     const handleSubmit = async (values) => {
-      const data = await fetch(`${process.env.WEB_URL}`+'api/sendMsg',{
+      console.log(WEB_URL)
+      const data = await fetch(`${WEB_URL}/api/sendMsg`,{
         method:'POST',
         headers:{
           'Content-Type':'application/json',
@@ -61,7 +62,7 @@ const Contact = () => {
         <Field name="message">
           {({field}) => <textarea value={field.value} onChange={field.onChange(field.name) } className='w-60 px-2 rounded-lg border-2 bordewr-gray-300 h-32' placeholder="Enter Your Message"/>}
         </Field>
-        <button type="submit" className='bg-c2 text-c1 font-semibold mt-10 rounded-xl p-2 text-xl'>Send Message</button>
+        <button type='submit' className='bg-c2 text-c1 font-semibold mt-10 rounded-xl p-2 text-xl'>Send Message</button>
       </Form>
      </Formik>
      </div>

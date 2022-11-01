@@ -4,7 +4,7 @@ import * as Yup from 'yup'
 import {toast,ToastContainer} from 'react-toastify'
 import { IoIosArrowForward,IoMdSend } from 'react-icons/io'
 import 'react-toastify/dist/ReactToastify.css'
-
+import WEB_URL from '../fa'
 
 const MobileContact = () => {
   const initialValues = {name:'',email:'',message: ''}
@@ -16,7 +16,7 @@ const MobileContact = () => {
    })
 
   const handleSubmit = (values) => {
-    const data = fetch(`${process.env.WEB_URL}`+'api/sendMsg',{
+    const data = fetch(`${WEB_URL}api/sendMsg`,{
       method:'POST',
       headers:{
         'Content-Type':'application/json',
@@ -59,7 +59,7 @@ const MobileContact = () => {
      <Field name='name' className="rounded-xl border-2 border-c2 px-2 text-lg lg:w-1/2 sm:w-fit" placeholder="Name"/>
      <Field name='email' className="rounded-xl border-2 border-c2 px-2 text-lg lg:w-1/2 sm:w-fit" placeholder="Email"/>
      <Field name='message'>{({field}) => <textarea className="rounded-xl border-2 border-c2 px-2 text-lg h-32 lg:w-96" placeholder="Enter Message" value={field.value} onChange={field.onChange(field.name)}/>}</Field>
-     <button className='flex items-center bg-c4 rounded-lg w-fit h-fit px-5 py-2 font-bold text-c1 text-xl'><IoMdSend/></button>
+     <button type='submit' className='flex items-center bg-c4 rounded-lg w-fit h-fit px-5 py-2 font-bold text-c1 text-xl'><IoMdSend/></button>
     </Form>
    </Formik>
    </div> 
